@@ -28,7 +28,15 @@ const plan: PlanItem[] = [
       "SEO backlink gap tool: compare your referring domains vs competitors, score opportunities, and export outreach CSV.",
     href: "/tools/backlink-finder",
   },
-  { day: "Day 3", date: "2026-03-07", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 3",
+    date: "2026-03-07",
+    title: "Backlink Researcher",
+    status: "Live",
+    description:
+      "Find UAE + niche-based high-DA backlink opportunities and approve/export outreach targets quickly.",
+    href: "/tools/backlink-researcher",
+  },
   { day: "Day 4", date: "2026-03-08", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 5", date: "2026-03-09", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 6", date: "2026-03-10", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
