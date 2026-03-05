@@ -153,10 +153,40 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const prospects = [...map.values()]
+  let prospects = [...map.values()]
     .filter((p) => p.level !== "Low")
     .sort((a, b) => b.score - a.score)
     .slice(0, 80);
+
+  if (prospects.length === 0) {
+    const curated = [
+      "medium.com",
+      "linkedin.com",
+      "reddit.com",
+      "quora.com",
+      "behance.net",
+      "dezeen.com",
+      "archdaily.com",
+      "yellowpages-uae.com",
+      "connect.ae",
+      "zawya.com",
+      "gulfnews.com",
+      "khaleejtimes.com",
+    ];
+
+    prospects = curated.map((domain) => {
+      const q = qualityScore(domain, keyword);
+      return {
+        domain,
+        sourceUrl: `https://duckduckgo.com/?q=${encodeURIComponent(`${keyword} site:${domain}`)}`,
+        title: `${keyword} opportunities on ${domain}`,
+        score: q.score,
+        level: q.level,
+        type: classifyType(domain, keyword),
+        reason: "Fallback list shown because live search returned limited parsable results",
+      };
+    });
+  }
 
   return NextResponse.json({ keyword, locale, total: prospects.length, prospects });
 }
