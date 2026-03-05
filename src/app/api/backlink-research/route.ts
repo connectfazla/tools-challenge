@@ -61,18 +61,36 @@ const getDomain = (u: string) => {
   }
 };
 
+const decodeDuckHref = (href: string) => {
+  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+
+  try {
+    const normalized = href.startsWith("http") ? href : `https://lite.duckduckgo.com${href}`;
+    const u = new URL(normalized);
+    const uddg = u.searchParams.get("uddg");
+    if (uddg) return decodeURIComponent(uddg);
+  } catch {
+    return "";
+  }
+
+  return "";
+};
+
 const parseDuckResults = (html: string): SearchHit[] => {
   const hits: SearchHit[] = [];
-  const regex = /<a[^>]*href="(https?:\/\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
   let m: RegExpExecArray | null;
 
   while ((m = regex.exec(html)) !== null) {
-    const url = m[1];
+    const resolved = decodeDuckHref(m[1]);
     const title = m[2].replace(/<[^>]+>/g, "").trim();
-    const domain = getDomain(url);
+    if (!resolved || !title) continue;
+
+    const domain = getDomain(resolved);
     if (!domain) continue;
     if (domain.includes("duckduckgo.com")) continue;
-    hits.push({ title, url, domain });
+
+    hits.push({ title, url: resolved, domain });
   }
 
   return hits;
