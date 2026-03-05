@@ -19,7 +19,15 @@ const plan: PlanItem[] = [
       "A quick credibility checker for viral posts and breaking headlines. Score share-risk in seconds.",
     href: "/tools/news-trust-score",
   },
-  { day: "Day 2", date: "2026-03-06", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 2",
+    date: "2026-03-06",
+    title: "Backlink Finder",
+    status: "Live",
+    description:
+      "SEO backlink gap tool: compare your referring domains vs competitors, score opportunities, and export outreach CSV.",
+    href: "/tools/backlink-finder",
+  },
   { day: "Day 3", date: "2026-03-07", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 4", date: "2026-03-08", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 5", date: "2026-03-09", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
