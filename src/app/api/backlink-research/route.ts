@@ -62,10 +62,15 @@ const getDomain = (u: string) => {
 };
 
 const decodeDuckHref = (href: string) => {
-  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+  const cleanedHref = href.replace(/&amp;/g, "&");
+  if (cleanedHref.startsWith("http://") || cleanedHref.startsWith("https://")) return cleanedHref;
 
   try {
-    const normalized = href.startsWith("http") ? href : `https://lite.duckduckgo.com${href}`;
+    const normalized = cleanedHref.startsWith("http")
+      ? cleanedHref
+      : cleanedHref.startsWith("//")
+        ? `https:${cleanedHref}`
+        : `https://lite.duckduckgo.com${cleanedHref}`;
     const u = new URL(normalized);
     const uddg = u.searchParams.get("uddg");
     if (uddg) return decodeURIComponent(uddg);
