@@ -37,7 +37,15 @@ const plan: PlanItem[] = [
       "Find UAE + niche-based high-DA backlink opportunities and approve/export outreach targets quickly.",
     href: "/tools/backlink-researcher",
   },
-  { day: "Day 4", date: "2026-03-08", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 4",
+    date: "2026-03-06",
+    title: "Timezone Overlap Planner",
+    status: "Live",
+    description:
+      "Find practical overlap hours between two global teams and instantly spot the best meeting windows.",
+    href: "/tools/timezone-overlap-planner",
+  },
   { day: "Day 5", date: "2026-03-09", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 6", date: "2026-03-10", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 7", date: "2026-03-11", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
