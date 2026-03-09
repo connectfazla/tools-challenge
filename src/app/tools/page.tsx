@@ -64,7 +64,15 @@ const plan: PlanItem[] = [
       "Paste context and instantly generate 3 polished follow-up message variants in formal, friendly, or urgent tone.",
     href: "/tools/client-follow-up-generator",
   },
-  { day: "Day 5", date: "2026-03-09", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 5",
+    date: "2026-03-09",
+    title: "Tariff Impact Estimator",
+    status: "Live",
+    description:
+      "Estimate how tariff changes impact landed cost, break-even unit price, and required sell price to protect margin.",
+    href: "/tools/tariff-impact-estimator",
+  },
   { day: "Day 6", date: "2026-03-10", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
   { day: "Day 7", date: "2026-03-11", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
 ];
