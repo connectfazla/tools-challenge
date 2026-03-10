@@ -73,7 +73,15 @@ const plan: PlanItem[] = [
       "Estimate how tariff changes impact landed cost, break-even unit price, and required sell price to protect margin.",
     href: "/tools/tariff-impact-estimator",
   },
-  { day: "Day 6", date: "2026-03-10", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 6",
+    date: "2026-03-10",
+    title: "Layoff Runway Planner",
+    status: "Live",
+    description:
+      "Calculate job-loss cash runway from savings + severance, model expense cuts, and see burn-rate targets for safer planning.",
+    href: "/tools/layoff-runway-planner",
+  },
   { day: "Day 7", date: "2026-03-11", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
 ];
 
