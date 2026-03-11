@@ -82,7 +82,15 @@ const plan: PlanItem[] = [
       "Calculate job-loss cash runway from savings + severance, model expense cuts, and see burn-rate targets for safer planning.",
     href: "/tools/layoff-runway-planner",
   },
-  { day: "Day 7", date: "2026-03-11", title: "Trend-based tool (auto-generated)", status: "Scheduled" },
+  {
+    day: "Day 7",
+    date: "2026-03-11",
+    title: "Subscription Saver",
+    status: "Live",
+    description:
+      "Inflation trend utility: audit monthly subscriptions, flag low-use services, and estimate annual savings instantly.",
+    href: "/tools/subscription-saver",
+  },
 ];
 
 export default function ToolsLandingPage() {
